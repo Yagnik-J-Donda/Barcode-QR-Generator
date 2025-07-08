@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barcode & QR Code Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🛠️ Barcode & QR Code Generator</h1>
+        <div class="card">
+            <input type="text" id="userInput" placeholder="Enter text, number, or URL">
+            <select id="codeType">
+                <option value="qr">QR Code</option>
+                <option value="barcode">Barcode</option>
+            </select>
+            <button onclick="generateCode()">Generate</button>
+            <div id="codeOutput"></div>
+            <button id="downloadBtn" style="display:none;" onclick="downloadImage()">Download Image</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
