@@ -15,6 +15,8 @@ body {
     border-radius: 15px;
     padding: 30px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
 }
 
 .card {
@@ -23,7 +25,7 @@ body {
     gap: 15px;
 }
 
-input, select, button {
+input, select {
     padding: 12px;
     border: none;
     border-radius: 10px;
@@ -32,19 +34,72 @@ input, select, button {
     width: 100%;
     max-width: 300px;
     margin: 0 auto;
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 button {
     background: #4facfe;
     color: white;
     cursor: pointer;
-    transition: 0.3s;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 12px 20px;
+    box-shadow: 0 4px 14px rgba(79, 172, 254, 0.4);
 }
 
 button:hover {
     background: #00f2fe;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 242, 254, 0.5);
 }
 
-#codeOutput {
+#codeOutput svg {
+    max-width: 300px; /* ✅ Default max size for QR */
+    width: 100%;      /* Responsive width */
+    height: auto;     /* Keep aspect ratio */
+    margin: auto;
+}
+
+
+
+/* 🔥 Buttons Group Styling */
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.buttons button {
+    flex: 1 1 auto;
+    min-width: 120px;
+    max-width: 150px;
+}
+
+/* 📥 Upload & Decode Section */
+#uploadInput {
     margin-top: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;
+}
+
+#decodedText {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    word-wrap: break-word;
 }

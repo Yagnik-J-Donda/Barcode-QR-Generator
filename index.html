@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barcode & QR Code Generator</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -15,14 +16,27 @@
                 <option value="qr">QR Code</option>
                 <option value="barcode">Barcode</option>
             </select>
-            <button onclick="generateCode()">Generate</button>
+
+            <div class="buttons">
+                <button onclick="generateCode()">Generate</button>
+                <button id="downloadBtnSVG" style="display:none;" onclick="downloadSVG()">Download as SVG</button>
+                <button id="downloadBtnPDF" style="display:none;" onclick="downloadPDF()">Download as PDF</button>
+            </div>
+
             <div id="codeOutput"></div>
-            <button id="downloadBtn" style="display:none;" onclick="downloadImage()">Download Image</button>
+
+            <!-- 🔥 New Upload & Decode Section -->
+            <h2 style="margin-top: 30px;">📥 Decode QR/Barcode</h2>
+            <input type="file" id="uploadInput" accept="image/*">
+            <button onclick="decodeCode()">Decode Uploaded Code</button>
+            <div id="decodedText" style="margin-top: 10px; font-weight: bold;"></div>
         </div>
     </div>
-
+    
     <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
